@@ -515,9 +515,11 @@ def update_menu():
         lanjut_update = input("\nApakah anda ingin melanjutkan ubah data(Y/N)? ").strip().lower()
         if lanjut_update in ["y", "ye", "ys", "yes"]:
             print("Melanjutkan perubahan data")
+        elif lanjut_update in ["n", 'no']:
+            print("penghapusan data dibatalkan")
+            return
         else:
-            print("Perubahan data dibatalkan")
-            return #balik ke menu utama
+            print("input tidak valid, input hanya antara yes dan no")
 
         daftar_kolom = ["Nama", "Kelas Angka", "Kelas Huruf", "Jurusan", "Nilai Rata-Rata", "Jenis Kelamin"]
 
@@ -642,9 +644,11 @@ def delete_menu():
             print("Data berhasil dihapus")
             data_siswa.pop(urutan)
             tampilkan_data_siswa()
-        else:
+        elif lanjut_delete in ["n", 'no']:
             print("penghapusan data dibatalkan")
             continue
+        else:
+            print("input tidak valid, input hanya antara yes dan no")
 
 #=============================================================
 
